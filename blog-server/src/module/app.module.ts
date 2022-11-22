@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/users.entity';
 import { ArticleModule } from './article/article.module';
 import { AuthModule } from './auth/auth.module';
+import { Article } from './article/article.entity';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { AuthModule } from './auth/auth.module';
       username: 'root',
       password: 'plf,.123',
       database: 'blog',
-      entities: [User],
+      entities: [User, Article],
       synchronize: true,
       autoLoadEntities: true,
       logging: true,
