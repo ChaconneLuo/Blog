@@ -7,19 +7,25 @@ export default function BaseRouter() {
   return useRoutes([
     {
       path: '/',
-      element: <Navigate to="/main" replace={true} />
+      element: <Navigate to="main" replace={true} />
     },
     {
-      path: '/main',
-      element: <SignPage />
-    },
-    {
-      path: '/main/login',
-      element: <Login />
-    },
-    {
-      path: '/main/register',
-      element: <Register />
+      path: 'main',
+      element: <SignPage />,
+      children: [
+        {
+          path: '',
+          element: <Navigate to="login" replace={true} />
+        },
+        {
+          path: 'login',
+          element: <Login />
+        },
+        {
+          path: 'register',
+          element: <Register />
+        }
+      ]
     }
   ])
 }

@@ -1,7 +1,10 @@
-.SignPage{
-  .background {
-    background-image: url("../../assets/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+.background {
+  background-image: url('../../assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
