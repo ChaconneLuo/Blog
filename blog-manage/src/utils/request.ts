@@ -14,19 +14,25 @@ const instance = axios.create({
   withCredentials: true
 })
 
-instance.interceptors.request.use((config) => {
-  console.log(
-    'req ' +
-      JSON.stringify(
-        {
-          url: config.url,
-          data: config.data,
-          params: config.params
-        },
-        null,
-        4
-      )
-  )
-})
+instance.interceptors.request.use(
+  (config) => {
+    console.log(
+      'req ' +
+        JSON.stringify(
+          {
+            url: config.url,
+            data: config.data,
+            params: config.params
+          },
+          null,
+          4
+        )
+    )
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
 
 export default instance

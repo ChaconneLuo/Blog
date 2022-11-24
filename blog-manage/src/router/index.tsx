@@ -2,6 +2,7 @@ import { Navigate, useRoutes } from 'react-router-dom'
 import Login from '../components/Login/Login'
 import SignPage from '../pages/SignPage/SignPage'
 import Register from '../components/Register/Register'
+import AdminPage from '../pages/AdminPage/AdminPage'
 
 export default function BaseRouter() {
   return useRoutes([
@@ -26,6 +27,10 @@ export default function BaseRouter() {
           element: <Register />
         }
       ]
+    },
+    {
+      path: 'admin',
+      element: <AdminPage />
     }
   ])
 }

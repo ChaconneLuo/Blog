@@ -1,5 +1,6 @@
 import { UsersServices } from './users.services';
-import { Body, Controller, Param, Post, Query, Response } from '@nestjs/common';
+import { Body, Controller, Post, Query, Res } from '@nestjs/common';
+import { Response } from 'express';
 import { UsersCreateDto } from './dto/users.create.dto';
 import { Return } from '../../common/Return';
 import { UsersReturnDto } from './dto/users.return.dto';
@@ -27,17 +28,19 @@ export class UsersController {
 
   @Post('/login')
   async login(
+    @Res({ passthrough: true }) resp: Response,
     @Query('email') email: string,
     @Query('password') password: string,
-  ): Promise<Return<string>> {
+  ): Promise<Return<boolean>> {
     const result: string = await this.usersService.login(email, password);
     if (result) {
+      resp.cookie('jwt', result);
       return {
         code: 200,
-        data: result,
+        data: true,
       };
     } else {
-      return { code: 400, data: null };
+      return { code: 400, data: false };
     }
   }
 }
