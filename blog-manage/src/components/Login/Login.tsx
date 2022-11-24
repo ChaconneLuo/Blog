@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Login.scss'
-import { Login, User } from '../../api/User'
+import { LoginInfo, User } from '../../api/User'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 
 function Login() {
@@ -13,7 +13,7 @@ function Login() {
     setPassword('')
   }
   const handleSubmit = () => {
-    User.login({ email, password } as Login)
+    User.login({ email, password } as LoginInfo)
       .then(() => {
         navigate('/admin')
       })

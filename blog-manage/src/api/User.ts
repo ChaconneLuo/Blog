@@ -7,13 +7,13 @@ export interface UserInfo {
   password: string
 }
 
-export interface Login {
+export interface LoginInfo {
   email: string
   password: string
 }
 
 export class User {
-  static async login(login: Login) {
+  static async login(login: LoginInfo) {
     const { email, password } = login
     return await request({
       url: '/user/login',
