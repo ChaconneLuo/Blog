@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity } from 'typeorm';
 import { IsEmail, IsString } from 'class-validator';
+
 @Entity()
 export class UsersCreateDto {
   @Column()
