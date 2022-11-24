@@ -1,12 +1,7 @@
 import React, { useState } from 'react'
 import './Login.scss'
-import { User } from '../../api/User'
+import { Login, User } from '../../api/User'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
-
-interface LoginForm {
-  email: string
-  password: string
-}
 
 function Login() {
   const [email, setEmail] = useState<string>('')
@@ -18,7 +13,7 @@ function Login() {
     setPassword('')
   }
   const handleSubmit = () => {
-    User.login(email, password)
+    User.login({ email, password } as Login)
       .then(() => {
         navigate('/admin')
       })
@@ -33,7 +28,7 @@ function Login() {
   return (
     <div className="Login">
       <span className="title">Blog</span>
-      <div className="login-form">
+      <div className="form-style">
         <form id="form">
           <span>
             <label htmlFor="email">Email:</label>
@@ -43,8 +38,10 @@ function Login() {
             <label htmlFor="password">密码:</label>
             <input id="password" type="password" onChange={(e) => setPassword(e.target.value)} required={true} />
           </span>
-          <div className="login-button">
-            <button type="button">注册</button>
+          <div className="button-group">
+            <button type="button" onClick={() => navigate('/main/register')}>
+              注册
+            </button>
             <button type="button" onClick={handleSubmit}>
               登录
             </button>

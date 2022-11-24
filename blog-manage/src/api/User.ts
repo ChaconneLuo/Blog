@@ -1,4 +1,4 @@
-import request from '../utils/request'
+import request from '../util/request'
 
 export interface UserInfo {
   firstName: string
@@ -7,8 +7,14 @@ export interface UserInfo {
   password: string
 }
 
+export interface Login {
+  email: string
+  password: string
+}
+
 export class User {
-  static async login(email: string, password: string) {
+  static async login(login: Login) {
+    const { email, password } = login
     return await request({
       url: '/user/login',
       method: 'post',
