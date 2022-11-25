@@ -32,4 +32,11 @@ export class User {
       data: user
     })
   }
+
+  static async getInfo() {
+    return await request({
+      url: '/user/getInfo',
+      method: 'get'
+    })
+  }
 }

@@ -4,10 +4,9 @@ import { LoginInfo, User } from '../../api/User'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 
 function Login() {
+  const navigate: NavigateFunction = useNavigate()
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
-
-  const navigate: NavigateFunction = useNavigate()
   const resetValue = () => {
     setEmail('')
     setPassword('')

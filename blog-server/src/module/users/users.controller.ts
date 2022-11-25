@@ -1,11 +1,27 @@
 import { UsersServices } from './users.services';
-import { Body, Controller, Post, Query, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Query,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
 import { Response } from 'express';
 import { UsersCreateDto } from './dto/users.create.dto';
 import { Return } from '../../common/Return';
 import { UsersReturnDto } from './dto/users.return.dto';
 import { deleteProperty } from '../../util/ObjectUtil';
 import { User } from './users.entity';
+import { AuthGuard } from '@nestjs/passport';
+
+class RequestWithUser extends Request {
+  user: {
+    email: string;
+  };
+}
 
 @Controller('/user')
 export class UsersController {
@@ -41,6 +57,20 @@ export class UsersController {
       };
     } else {
       return { code: 400, data: false };
+    }
+  }
+
+  @UseGuards(AuthGuard('jwt'))
+  @Get('/getInfo')
+  async getInfo(@Req() req: RequestWithUser): Promise<Return<UsersReturnDto>> {
+    const result: UsersReturnDto = deleteProperty<User, UsersReturnDto>(
+      await this.usersService.getInfo(req.user!.email),
+      ['id', 'created', 'updated', 'password'],
+    );
+    if (result) {
+      return { code: 200, data: result as UsersReturnDto };
+    } else {
+      return { code: 400, data: null };
     }
   }
 }

@@ -40,4 +40,10 @@ export class UsersServices {
       return null;
     }
   }
+
+  async getInfo(email: string): Promise<User> {
+    return this.usersRepository.findOneBy({
+      email: email,
+    });
+  }
 }
