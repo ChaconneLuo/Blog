@@ -1,0 +1,4 @@
+@import 'src/assets/mixins/article';
+.ArticleEdit {
+  @include article;
+}
