@@ -1,4 +1,41 @@
 @import 'src/assets/mixins/article';
+$table-radius: 5px;
 .ArticleList {
   @include article;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  .info {
+    flex: 1;
+    display: flex;
+    margin: 50px 30px 30px;
+
+    .table {
+      flex: 1;
+      font-family: #{$font};
+      tr {
+        height: 50px;
+        td,
+        th {
+          border: 1px solid #bae0ff;
+          text-align: center;
+        }
+        th:first-of-type {
+          border-top-left-radius: $table-radius;
+        }
+        th:last-of-type {
+          border-top-right-radius: $table-radius;
+        }
+      }
+      tr:last-of-type {
+        td:first-of-type {
+          border-bottom-left-radius: $table-radius;
+        }
+        td:last-of-type {
+          border-bottom-right-radius: $table-radius;
+        }
+      }
+    }
+  }
 }

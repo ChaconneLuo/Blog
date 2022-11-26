@@ -16,12 +16,7 @@ import { UsersReturnDto } from './dto/users.return.dto';
 import { deleteProperty } from '../../util/ObjectUtil';
 import { User } from './users.entity';
 import { AuthGuard } from '@nestjs/passport';
-
-class RequestWithUser extends Request {
-  user: {
-    email: string;
-  };
-}
+import { RequestWithUser } from '../../common/RequestWithUser';
 
 @Controller('/user')
 export class UsersController {

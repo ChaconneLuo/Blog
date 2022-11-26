@@ -1,13 +1,13 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { BaseEntity } from '../../common/baseObject';
 
 @Entity()
 export class Article extends BaseEntity {
-  @Column()
-  title: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column()
-  subTitle: string;
+  title: string;
 
   @Column()
   author: string;

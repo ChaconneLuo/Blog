@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import './SideBar.scss'
 import { useAppSelector } from '../../store/hooks'
 import { useNavigate } from 'react-router-dom'
@@ -19,4 +19,4 @@ function SideBar(): React.ReactElement {
   )
 }
 
-export default memo(SideBar)
+export default SideBar

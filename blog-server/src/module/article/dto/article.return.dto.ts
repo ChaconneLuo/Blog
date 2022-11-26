@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { IsNumber, IsString } from 'class-validator';
 
 @Entity()
-export class ArticleUpdateDto {
+export class ArticleReturnDto {
   @PrimaryGeneratedColumn()
   @IsNumber()
   id: number;
@@ -10,18 +10,4 @@ export class ArticleUpdateDto {
   @Column()
   @IsString()
   title: string;
-
-  @Column()
-  @IsString()
-  articleContent: string;
-
-  @Column()
-  @IsString()
-  articleIntroduce: string;
-
-  @Column({
-    default: '',
-  })
-  @IsString()
-  tags: string;
 }

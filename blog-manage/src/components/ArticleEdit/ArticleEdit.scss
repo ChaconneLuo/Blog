@@ -1,4 +1,80 @@
 @import 'src/assets/mixins/article';
 .ArticleEdit {
   @include article;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+  .info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .union-info {
+      flex: 1;
+      .title,
+      .tags {
+        display: flex;
+        input {
+          height: 40px;
+          @include inputStyle;
+        }
+        input:focus {
+          outline-color: #bae0ff;
+        }
+      }
+    }
+    .introduce {
+      flex: 1;
+      display: flex;
+      textarea {
+        @include inputStyle;
+        height: 102px;
+        resize: none;
+      }
+      textarea:focus {
+        outline-color: #bae0ff;
+      }
+    }
+  }
+  .markdown {
+    height: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    #source {
+      outline: none;
+      flex: 1;
+      margin: 15px;
+      resize: none;
+      border-radius: 5px;
+      font-size: 16px;
+      height: calc(100% - 2 * 15px - 20px);
+      line-height: 30px;
+      padding: 10px;
+    }
+    #source:focus {
+      border: 1px solid #bae0ff;
+    }
+    #content {
+      flex: 1;
+      margin: 15px;
+      border-radius: 5px;
+      border: 1px solid #cbcbcb;
+      padding: 10px;
+      font-family: #{$font};
+      background-color: #f0f0f0;
+    }
+  }
+  .button-group {
+    display: flex;
+    justify-content: center;
+    button {
+      background-color: #0070f3;
+      border: 0;
+      color: white;
+      width: 70px;
+      height: 40px;
+      border-radius: 5px;
+    }
+  }
 }

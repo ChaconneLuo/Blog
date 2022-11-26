@@ -10,11 +10,9 @@ $pageBackgroundColor: #cbcbcb;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    header,
-    footer {
+    .bac {
+      overflow: hidden;
       background-color: $pageBackgroundColor;
-      height: 50px;
     }
   }
 }

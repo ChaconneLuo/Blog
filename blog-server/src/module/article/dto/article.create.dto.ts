@@ -5,15 +5,7 @@ import { IsString } from 'class-validator';
 export class ArticleCreateDto {
   @Column()
   @IsString()
-  author: string;
-
-  @Column()
-  @IsString()
   title: string;
-
-  @Column()
-  @IsString()
-  subTitle: string;
 
   @Column()
   @IsString()
@@ -24,8 +16,8 @@ export class ArticleCreateDto {
   articleIntroduce: string;
 
   @Column({
-    default: '{}',
+    default: '',
   })
   @IsString()
-  tags: string[];
+  tags: string;
 }

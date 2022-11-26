@@ -1,4 +1,21 @@
+@use 'sass:meta';
+
+$font: 'Microsoft YaHei UI', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+'Helvetica Neue', 'sans-serif';
 @mixin article {
   background-color: white;
   flex: 1;
+}
+
+@mixin inputStyle {
+  flex: 1;
+  line-height: 30px;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: solid 1px #cbcbcb;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

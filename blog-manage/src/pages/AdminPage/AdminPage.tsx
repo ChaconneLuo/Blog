@@ -16,9 +16,9 @@ function AdminPage() {
         <SideBar />
       </aside>
       <main>
-        <header></header>
-        <Outlet />
-        <footer></footer>
+        <div className="bac">
+          <Outlet />
+        </div>
       </main>
     </div>
   )
