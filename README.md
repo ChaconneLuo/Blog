@@ -8,7 +8,7 @@
 
 基于Nest.js TypeOrm框架，使用Typescript编写，目前实现了登录验证，存储文章，Jwt授权等功能。
 
-## Admin模块
+## Admin模块(已完成)
 
 ### 博客管理端
 
