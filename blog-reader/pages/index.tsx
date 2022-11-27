@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className={styles.title}>Welcome to Blog</h1>
 
         <p className={styles.description}>
-          Get started <code>localhost:3002/article/1</code>
+          URL Example: <code>localhost:3002/article/1</code>
         </p>
       </main>
     </div>
