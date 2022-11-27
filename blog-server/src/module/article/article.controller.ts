@@ -1,5 +1,13 @@
 import { ArticleServices } from './article.services';
-import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Query,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { Return } from '../../common/Return';
 import { ArticleCreateDto } from './dto/article.create.dto';
 import { RequestWithUser } from '../../common/RequestWithUser';
@@ -39,5 +47,15 @@ export class ArticleController {
       code: 200,
       data: res,
     };
+  }
+
+  @Get('/getArticle')
+  async getArticleById(@Query('id') id: number): Promise<Return<Article>> {
+    const article = await this.articleServices.getArticle(id);
+    if (!!article) {
+      return { code: 200, data: article };
+    } else {
+      return { code: 400, data: null };
+    }
   }
 }

@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { ReactElement, useEffect } from 'react'
 import { useAppDispatch } from '../../store/hooks'
 import { updateUserInfo } from '../../store/userSlice'
 import { Outlet } from 'react-router-dom'
 import SideBar from '../../components/SideBar/SideBar'
 import './AdminPage.scss'
 
-function AdminPage() {
+function AdminPage(): ReactElement {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(updateUserInfo())

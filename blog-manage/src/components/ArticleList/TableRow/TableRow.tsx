@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { ArticleListElement } from '../../../api/Article'
 
-function TableRow(props: ArticleListElement) {
+function TableRow(props: ArticleListElement): ReactElement {
   return (
     <>
       <tr>

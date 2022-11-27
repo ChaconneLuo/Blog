@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import './SideBar.scss'
 import { useAppSelector } from '../../store/hooks'
 import { useNavigate } from 'react-router-dom'
 
-function SideBar(): React.ReactElement {
+function SideBar(): ReactElement {
   const selector = useAppSelector((state) => state.user)
   const navigate = useNavigate()
   return (

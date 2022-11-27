@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 import './ArticleEdit.scss'
 import { marked } from 'marked'
 import { Article } from '../../api/Article'
 
-function ArticleEdit() {
+function ArticleEdit(): ReactElement {
   const [sourceContent, setSourceContent] = useState<string>('')
   const [title, setTitle] = useState<string>('')
   const [tags, setTags] = useState<string>('')

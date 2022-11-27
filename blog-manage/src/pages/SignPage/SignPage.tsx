@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import './SignPage.scss'
 import { Outlet } from 'react-router-dom'
 
-function SignPage() {
+function SignPage(): ReactElement {
   return (
     <div className="background">
       <Outlet></Outlet>

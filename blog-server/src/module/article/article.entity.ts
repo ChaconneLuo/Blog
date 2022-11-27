@@ -12,7 +12,9 @@ export class Article extends BaseEntity {
   @Column()
   author: string;
 
-  @Column()
+  @Column({
+    type: 'longtext',
+  })
   articleContent: string;
 
   @Column()

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import './Login.scss'
 import { LoginInfo, User } from '../../api/User'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 
-function Login() {
+function Login(): ReactElement {
   const navigate: NavigateFunction = useNavigate()
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')

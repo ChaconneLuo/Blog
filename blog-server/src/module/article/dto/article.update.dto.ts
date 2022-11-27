@@ -11,7 +11,9 @@ export class ArticleUpdateDto {
   @IsString()
   title: string;
 
-  @Column()
+  @Column({
+    type: 'longtext',
+  })
   @IsString()
   articleContent: string;
 

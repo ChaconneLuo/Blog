@@ -1,0 +1,9 @@
+.article {
+  width: 80vw;
+}
+.page {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

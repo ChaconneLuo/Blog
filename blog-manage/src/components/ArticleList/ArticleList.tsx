@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { ReactElement, useEffect } from 'react'
 import './ArticleList.scss'
 import TableRow from './TableRow/TableRow'
 import { updateArticleInfo } from '../../store/articleSlice'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 
-function ArticleList() {
+function ArticleList(): ReactElement {
   const dispatch = useAppDispatch()
   const selector = useAppSelector((state) => state.article)
   useEffect(() => {

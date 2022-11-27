@@ -22,4 +22,8 @@ export class ArticleServices {
   async getAll(email: string): Promise<Article[]> {
     return await this.articleRepository.find({ where: { author: email } });
   }
+
+  async getArticle(id: number): Promise<Article> {
+    return await this.articleRepository.findOne({ where: { id: id } });
+  }
 }

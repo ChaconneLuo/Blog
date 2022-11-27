@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import './Register.scss'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 import { UnionType } from '../../util/TypeUtil'
 import { User, UserInfo } from '../../api/User'
 
-function Register() {
+function Register(): ReactElement {
   const [form, setForm] = useState<UserInfo>({
     firstName: '',
     lastName: '',

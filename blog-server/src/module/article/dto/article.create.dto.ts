@@ -7,7 +7,9 @@ export class ArticleCreateDto {
   @IsString()
   title: string;
 
-  @Column()
+  @Column({
+    type: 'longtext',
+  })
   @IsString()
   articleContent: string;
 
