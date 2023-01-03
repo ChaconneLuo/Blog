@@ -9,7 +9,7 @@ export class AuthStrategy extends PassportStrategy(Strategy, 'jwt') {
     super({
       jwtFromRequest: (req) => req.headers.cookie.slice(4),
       ignoreExpiration: false,
-      secretOrKey: jwtConstants.secret,
+      secretOrKey: jwtConstants.secret
     });
   }
 

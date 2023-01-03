@@ -12,7 +12,7 @@ export class UsersCreateDto {
   lastName: string;
 
   @Column({
-    unique: true,
+    unique: true
   })
   @IsEmail()
   email: string;

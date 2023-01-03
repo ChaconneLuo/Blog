@@ -1,8 +1,8 @@
-import React, { ReactElement, useState } from 'react'
-import './Register.scss'
-import { NavigateFunction, useNavigate } from 'react-router-dom'
-import { UnionType } from '../../util/TypeUtil'
-import { User, UserInfo } from '../../api/User'
+import React, { ReactElement, useState } from 'react';
+import './Register.scss';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
+import { UnionType } from '../../util/TypeUtil';
+import { User, UserInfo } from '../../api/User';
 
 function Register(): ReactElement {
   const [form, setForm] = useState<UserInfo>({
@@ -10,27 +10,27 @@ function Register(): ReactElement {
     lastName: '',
     email: '',
     password: ''
-  })
+  });
   const edit = (keyName: UnionType<UserInfo>, value: UserInfo[typeof keyName]) => {
     setForm({
       ...form,
       [keyName]: value
-    })
-  }
+    });
+  };
   const handleSubmit = () => {
     User.register(form)
       .then(() => {
-        navigate('/main/login')
+        navigate('/main/login');
       })
       .catch(() => {
-        alert('注册失败')
+        alert('注册失败');
       })
       .finally(() => {
-        resetForm()
-      })
-  }
-  const resetForm = () => {}
-  const navigate: NavigateFunction = useNavigate()
+        resetForm();
+      });
+  };
+  const resetForm = () => {};
+  const navigate: NavigateFunction = useNavigate();
   return (
     <div className="Register">
       <span className="title">注册</span>
@@ -63,7 +63,7 @@ function Register(): ReactElement {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

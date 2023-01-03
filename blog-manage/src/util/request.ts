@@ -1,18 +1,18 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export interface R<T> {
-  code: number
-  data: T
-  message?: string
+  code: number;
+  data: T;
+  message?: string;
 }
 
-export type Res<T> = Promise<R<T>>
+export type Res<T> = Promise<R<T>>;
 
 const instance = axios.create({
   baseURL: 'http://localhost:3000',
   timeout: 3000,
   withCredentials: true
-})
+});
 
 instance.interceptors.request.use(
   (config) => {
@@ -27,19 +27,19 @@ instance.interceptors.request.use(
           null,
           4
         )
-    )
-    return config
+    );
+    return config;
   },
   (error) => {
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
-)
+);
 instance.interceptors.response.use(
   (response) => {
-    return Promise.resolve(response.data)
+    return Promise.resolve(response.data);
   },
   (error) => {
-    return Promise.reject(error)
+    return Promise.reject(error);
   }
-)
-export default instance
+);
+export default instance;

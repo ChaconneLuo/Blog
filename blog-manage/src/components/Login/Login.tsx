@@ -1,28 +1,28 @@
-import React, { ReactElement, useState } from 'react'
-import './Login.scss'
-import { LoginInfo, User } from '../../api/User'
-import { NavigateFunction, useNavigate } from 'react-router-dom'
+import React, { ReactElement, useState } from 'react';
+import './Login.scss';
+import { LoginInfo, User } from '../../api/User';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 function Login(): ReactElement {
-  const navigate: NavigateFunction = useNavigate()
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
+  const navigate: NavigateFunction = useNavigate();
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const resetValue = () => {
-    setEmail('')
-    setPassword('')
-  }
+    setEmail('');
+    setPassword('');
+  };
   const handleSubmit = () => {
     User.login({ email, password } as LoginInfo)
       .then(() => {
-        navigate('/admin')
+        navigate('/admin');
       })
       .catch(() => {
-        alert('登录失败')
+        alert('登录失败');
       })
       .finally(() => {
-        resetValue()
-      })
-  }
+        resetValue();
+      });
+  };
 
   return (
     <div className="Login">
@@ -48,7 +48,7 @@ function Login(): ReactElement {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

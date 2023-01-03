@@ -1,20 +1,20 @@
-import request from '../util/request'
+import request from '../util/request';
 
 export interface UserInfo {
-  firstName: string
-  lastName: string
-  email: string
-  password: string
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
 }
 
 export interface LoginInfo {
-  email: string
-  password: string
+  email: string;
+  password: string;
 }
 
 export class User {
   static async login(login: LoginInfo) {
-    const { email, password } = login
+    const { email, password } = login;
     return await request({
       url: '/user/login',
       method: 'post',
@@ -22,7 +22,7 @@ export class User {
         email,
         password
       }
-    })
+    });
   }
 
   static async register(user: UserInfo) {
@@ -30,13 +30,13 @@ export class User {
       url: '/user/register',
       method: 'post',
       data: user
-    })
+    });
   }
 
   static async getInfo() {
     return await request({
       url: '/user/getInfo',
       method: 'get'
-    })
+    });
   }
 }

@@ -8,7 +8,7 @@ export class ArticleCreateDto {
   title: string;
 
   @Column({
-    type: 'longtext',
+    type: 'longtext'
   })
   @IsString()
   articleContent: string;
@@ -18,7 +18,7 @@ export class ArticleCreateDto {
   articleIntroduce: string;
 
   @Column({
-    default: '',
+    default: ''
   })
   @IsString()
   tags: string;

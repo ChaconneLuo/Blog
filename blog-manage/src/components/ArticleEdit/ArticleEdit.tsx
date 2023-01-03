@@ -1,20 +1,20 @@
-import React, { ReactElement, useEffect, useState } from 'react'
-import './ArticleEdit.scss'
-import { marked } from 'marked'
-import { Article } from '../../api/Article'
+import React, { ReactElement, useEffect, useState } from 'react';
+import './ArticleEdit.scss';
+import { marked } from 'marked';
+import { Article } from '../../api/Article';
 
 function ArticleEdit(): ReactElement {
-  const [sourceContent, setSourceContent] = useState<string>('')
-  const [title, setTitle] = useState<string>('')
-  const [tags, setTags] = useState<string>('')
-  const [introduce, setIntroduce] = useState<string>('')
+  const [sourceContent, setSourceContent] = useState<string>('');
+  const [title, setTitle] = useState<string>('');
+  const [tags, setTags] = useState<string>('');
+  const [introduce, setIntroduce] = useState<string>('');
   const updateMarkDown = () => {
-    document.getElementById('content')!.innerHTML = marked.parse(sourceContent)
-  }
+    document.getElementById('content')!.innerHTML = marked.parse(sourceContent);
+  };
   const handleSubmit = () => {
     if (title === '' || sourceContent === '') {
-      alert('标题和内容为必填项')
-      return
+      alert('标题和内容为必填项');
+      return;
     }
     Article.add({
       title: title,
@@ -23,16 +23,16 @@ function ArticleEdit(): ReactElement {
       tags: tags
     })
       .then(() => {
-        setSourceContent('')
-        setTags('')
-        setTitle('')
-        setIntroduce('')
+        setSourceContent('');
+        setTags('');
+        setTitle('');
+        setIntroduce('');
       })
-      .catch(() => {})
-  }
+      .catch(() => {});
+  };
   useEffect(() => {
-    updateMarkDown()
-  }, [sourceContent])
+    updateMarkDown();
+  }, [sourceContent]);
   return (
     <div className="ArticleEdit">
       <div className="info">
@@ -40,7 +40,7 @@ function ArticleEdit(): ReactElement {
           <div className="title">
             <input
               onChange={(e) => {
-                setTitle(e.target.value)
+                setTitle(e.target.value);
               }}
               placeholder="标题"
             ></input>
@@ -48,7 +48,7 @@ function ArticleEdit(): ReactElement {
           <div className="tags">
             <input
               onChange={(e) => {
-                setTags(e.target.value)
+                setTags(e.target.value);
               }}
               placeholder="标签"
             ></input>
@@ -58,7 +58,7 @@ function ArticleEdit(): ReactElement {
           <textarea
             placeholder="文章简介"
             onChange={(e) => {
-              setIntroduce(e.target.value)
+              setIntroduce(e.target.value);
             }}
           ></textarea>
         </div>
@@ -73,7 +73,7 @@ function ArticleEdit(): ReactElement {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default ArticleEdit
+export default ArticleEdit;

@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
-import { ArticleListElement } from '../../../api/Article'
+import React, { ReactElement } from 'react';
+import { ArticleListElement } from '../../../api/Article';
 
 function TableRow(props: ArticleListElement): ReactElement {
   return (
@@ -9,7 +9,7 @@ function TableRow(props: ArticleListElement): ReactElement {
         <td>{props.title}</td>
       </tr>
     </>
-  )
+  );
 }
 
-export default TableRow
+export default TableRow;

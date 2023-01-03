@@ -1,4 +1,4 @@
-import request from "../../util/request";
+import request from '../../util/request';
 
 export interface ArticleInfo {
   id: number;
@@ -12,11 +12,11 @@ export interface ArticleInfo {
 export default class Article {
   static async getArticle(id: string) {
     return await request({
-      url: "/article/getArticle",
-      method: "get",
+      url: '/article/getArticle',
+      method: 'get',
       params: {
-        id,
-      },
+        id
+      }
     });
   }
 }

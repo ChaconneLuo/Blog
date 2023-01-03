@@ -21,10 +21,10 @@ import { Article } from './article/article.entity';
       entities: [User, Article],
       synchronize: true,
       autoLoadEntities: true,
-      logging: true,
-    }),
+      logging: true
+    })
   ],
   controllers: [],
-  providers: [],
+  providers: []
 })
 export class AppModule {}

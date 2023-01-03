@@ -8,13 +8,13 @@ import { ArticleCreateDto } from './dto/article.create.dto';
 export class ArticleServices {
   constructor(
     @InjectRepository(Article)
-    private articleRepository: Repository<Article>,
+    private articleRepository: Repository<Article>
   ) {}
 
   async add(email: string, article: ArticleCreateDto): Promise<Article> {
-    let res = await this.articleRepository.insert({
+    const res = await this.articleRepository.insert({
       ...article,
-      author: email,
+      author: email
     });
     return this.articleRepository.findOneBy({ id: res.identifiers.at(0).id });
   }

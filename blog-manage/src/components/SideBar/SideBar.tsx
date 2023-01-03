@@ -1,11 +1,11 @@
-import React, { ReactElement } from 'react'
-import './SideBar.scss'
-import { useAppSelector } from '../../store/hooks'
-import { useNavigate } from 'react-router-dom'
+import React, { ReactElement } from 'react';
+import './SideBar.scss';
+import { useAppSelector } from '../../store/hooks';
+import { useNavigate } from 'react-router-dom';
 
 function SideBar(): ReactElement {
-  const selector = useAppSelector((state) => state.user)
-  const navigate = useNavigate()
+  const selector = useAppSelector((state) => state.user);
+  const navigate = useNavigate();
   return (
     <div className="SideBar">
       <ul>
@@ -16,7 +16,7 @@ function SideBar(): ReactElement {
         <li onClick={() => navigate('/admin/list')}>文章列表</li>
       </ul>
     </div>
-  )
+  );
 }
 
-export default SideBar
+export default SideBar;

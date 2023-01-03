@@ -12,12 +12,12 @@ import { PassportModule } from '@nestjs/passport';
     JwtModule.register({
       secret: jwtConstants.secret,
       signOptions: {
-        expiresIn: '2h',
-      },
-    }),
+        expiresIn: '2h'
+      }
+    })
   ],
   providers: [AuthService, AuthStrategy],
   controllers: [AuthController],
-  exports: [AuthService],
+  exports: [AuthService]
 })
 export class AuthModule {}

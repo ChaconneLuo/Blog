@@ -10,7 +10,7 @@ export class User extends BaseEntity {
   lastName: string;
 
   @Column({
-    unique: true,
+    unique: true
   })
   email: string;
 

@@ -1,13 +1,13 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { Article, ArticleListElement } from '../api/Article'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { Article, ArticleListElement } from '../api/Article';
 
 interface ArticleState {
-  list: ArticleListElement[]
+  list: ArticleListElement[];
 }
 
 const initial: ArticleState = {
   list: []
-}
+};
 
 export const articleSlice = createSlice({
   name: 'article',
@@ -17,12 +17,12 @@ export const articleSlice = createSlice({
     builder.addCase(updateArticleInfo.fulfilled, (state, action) => {
       return {
         list: action.payload
-      }
-    })
+      };
+    });
   }
-})
+});
 export const updateArticleInfo = createAsyncThunk('article/updateArticleInfo', async (): Promise<ArticleListElement[]> => {
-  return (await Article.getInfo()).data
-})
-export const {} = articleSlice.actions
-export default articleSlice.reducer
+  return (await Article.getInfo()).data;
+});
+export const {} = articleSlice.actions;
+export default articleSlice.reducer;

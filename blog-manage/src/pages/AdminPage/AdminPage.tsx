@@ -1,15 +1,15 @@
-import React, { ReactElement, useEffect } from 'react'
-import { useAppDispatch } from '../../store/hooks'
-import { updateUserInfo } from '../../store/userSlice'
-import { Outlet } from 'react-router-dom'
-import SideBar from '../../components/SideBar/SideBar'
-import './AdminPage.scss'
+import React, { ReactElement, useEffect } from 'react';
+import { useAppDispatch } from '../../store/hooks';
+import { updateUserInfo } from '../../store/userSlice';
+import { Outlet } from 'react-router-dom';
+import SideBar from '../../components/SideBar/SideBar';
+import './AdminPage.scss';
 
 function AdminPage(): ReactElement {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(updateUserInfo())
-  })
+    dispatch(updateUserInfo());
+  });
   return (
     <div className="AdminPage">
       <aside>
@@ -21,7 +21,7 @@ function AdminPage(): ReactElement {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default AdminPage
+export default AdminPage;
