@@ -1,4 +1,4 @@
-export class RequestWithUser extends Request {
+export interface RequestWithUser extends Request {
   user: {
     email: string;
   };

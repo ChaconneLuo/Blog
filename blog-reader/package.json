@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "antd": "^5.1.6",
     "axios": "^1.2.0",
     "marked": "^4.2.3",
     "next": "13.0.4",

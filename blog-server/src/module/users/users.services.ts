@@ -23,7 +23,7 @@ export class UsersServices {
   }
 
   async checkUserExist(email: string): Promise<boolean> {
-    let res = await this.usersRepository.findOne({
+    const res = await this.usersRepository.findOne({
       select: ['email'],
       where: { email: email }
     });
@@ -31,10 +31,10 @@ export class UsersServices {
   }
 
   async login(email: string, password: string): Promise<string> {
-    let user: User = await this.usersRepository.findOne({
+    const user: User = await this.usersRepository.findOne({
       where: { email: email, password: password }
     });
-    if (!!user) {
+    if (user) {
       return this.authService.getToken({ email: user.email });
     } else {
       return null;

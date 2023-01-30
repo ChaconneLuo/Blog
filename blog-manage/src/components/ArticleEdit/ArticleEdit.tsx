@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 import './ArticleEdit.scss';
 import { marked } from 'marked';
 import { Article } from '../../api/Article';
@@ -8,9 +8,9 @@ function ArticleEdit(): ReactElement {
   const [title, setTitle] = useState<string>('');
   const [tags, setTags] = useState<string>('');
   const [introduce, setIntroduce] = useState<string>('');
-  const updateMarkDown = () => {
+  const updateMarkDown = useCallback(() => {
     document.getElementById('content')!.innerHTML = marked.parse(sourceContent);
-  };
+  }, [sourceContent]);
   const handleSubmit = () => {
     if (title === '' || sourceContent === '') {
       alert('标题和内容为必填项');
@@ -32,7 +32,7 @@ function ArticleEdit(): ReactElement {
   };
   useEffect(() => {
     updateMarkDown();
-  }, [sourceContent]);
+  }, [sourceContent, updateMarkDown]);
   return (
     <div className="ArticleEdit">
       <div className="info">

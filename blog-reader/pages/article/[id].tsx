@@ -1,10 +1,9 @@
-import React from 'react';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
-import Article from '../api/Article';
 import DefaultErrorPage from 'next/error';
-import ArticleComponent from '../../components/ArticleComponent';
 import { NextSeo } from 'next-seo';
-import styles from '../../styles/Article.module.css';
+import styles from './article.module.css';
+import Article from '../../api/Article';
+import ArticleComponent from '../../components/ArticleComponent';
 
 function Page({ id, title, author, articleContent, articleIntroduce, tags }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   if (!tags) {

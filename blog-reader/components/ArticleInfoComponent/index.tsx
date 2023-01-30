@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "../styles/ArticleInfo.module.css";
+import React from 'react';
+import styles from './ArticleInfo.module.css';
 
 interface ArticleInfoProps {
   author: string;

@@ -26,4 +26,17 @@ export class ArticleServices {
   async getArticle(id: number): Promise<Article> {
     return await this.articleRepository.findOne({ where: { id: id } });
   }
+
+  async getTotal(): Promise<number> {
+    return await this.articleRepository.count();
+  }
+
+  async getArticleByPage(pageIndex: number, pageSize: number) {
+    return await this.articleRepository
+      .createQueryBuilder('article')
+      .orderBy('id')
+      .skip(pageSize * (pageIndex - 1))
+      .take(pageSize)
+      .getMany();
+  }
 }
