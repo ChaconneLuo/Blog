@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../stores/Theme';
-import styles from './navbar.module.css';
+import styles from './navbar.module.scss';
 
 export default function NavBar() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -8,7 +8,7 @@ export default function NavBar() {
   return (
     <div className={styles.navBar}>
       <a>
-        <div className={styles.logoIcon}></div>
+        <div className={styles.logo}>Blog</div>
       </a>
       <div className={styles.themeArea}>
         <div></div>

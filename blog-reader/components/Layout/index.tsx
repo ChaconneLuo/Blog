@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from '../NavBar';
 import Footer from '../Footer';
-import style from './layout.module.css';
+import style from './layout.module.scss';
 
 export interface LayoutProps {
   navbarData: any;

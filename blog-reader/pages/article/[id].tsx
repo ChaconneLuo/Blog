@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import DefaultErrorPage from 'next/error';
 import { NextSeo } from 'next-seo';
-import styles from './article.module.css';
+import styles from './article.module.scss';
 import Article from '../../api/Article';
 import ArticleComponent from '../../components/ArticleComponent';
 

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Layout, { LayoutProps } from '../components/Layout';
 import { ThemeContextProvider } from '../stores/Theme';
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 
 export default function App({ Component, pageProps, navbarData, footerData }: AppProps & LayoutProps) {
