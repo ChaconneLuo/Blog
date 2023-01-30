@@ -1,0 +1,11 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "personal blog",
+  "scripts": {
+    "server": "cd ./blog-server & yarn start",
+    "reader": "cd ./blog-reader & yarn dev",
+    "manage": "cd ./blog-manage & yarn start"
+  },
+  "author": "ChaconneLuo"
+}
