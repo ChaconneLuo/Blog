@@ -1,9 +1,10 @@
 import { useState, useEffect, useMemo, useCallback, useRef, createContext } from 'react';
 import { Themes } from '../common/Enum';
+import { toggle } from '../util/Tools';
 
 interface ThemeContextProps {
   theme: Themes;
-  setTheme: (theme: Themes) => void;
+  setTheme: () => void;
 }
 
 interface IProps {
@@ -23,6 +24,7 @@ export const ThemeContextProvider = ({ children }: IProps): JSX.Element => {
     localStorage.setItem('theme', theme);
     document.getElementsByTagName('html')[0].dataset.theme = theme;
   });
+  const toggleTheme = toggle<Themes>(updateTheme.current, ...Object.values(Themes));
   useEffect(() => {
     checkTheme.current();
     window.addEventListener('storage', checkTheme.current);
@@ -35,7 +37,7 @@ export const ThemeContextProvider = ({ children }: IProps): JSX.Element => {
     <ThemeContext.Provider
       value={{
         theme: theme,
-        setTheme: checkTheme.current
+        setTheme: toggleTheme
       }}
     >
       {children}
