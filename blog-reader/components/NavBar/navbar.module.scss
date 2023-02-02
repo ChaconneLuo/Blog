@@ -15,7 +15,12 @@
 }
 
 .logo {
+  color: var(--primary-color);
   width: 4.375rem;
   height: 1.25rem;
   background-size: 4.375rem 1.25rem;
+}
+
+.themeArea {
+  flex-grow: 1;
 }
