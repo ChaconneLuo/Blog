@@ -52,7 +52,7 @@ export default function Home({ title, description, articles }: MainProps) {
             return (
               <Link href={`${SERVERHOST}/article/` + item.articleId} key={index} className={styles.link}>
                 <div>
-                  <Card hoverable title={item.title} bordered={false} className={styles.card}>
+                  <Card hoverable title={item.title} bordered={false} headStyle={{ color: 'var(--primary-color)' }} className={styles.card}>
                     <p>{item.description}</p>
                   </Card>
                 </div>
