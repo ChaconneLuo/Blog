@@ -7,7 +7,11 @@ interface ToggleProps {
   current: string;
 }
 
-const iconMap = {
+interface iconMapType {
+  [index: string]: string;
+}
+
+const iconMap: iconMapType = {
   light: sun,
   dark: moon
 };
